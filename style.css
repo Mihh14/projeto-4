@@ -1,0 +1,135 @@
+:root {
+    --cor-fundo: #FFF0F6;
+    --cor-principal: #FFD6E8;
+    --cor-secundaria: #FFB7D5;
+    --cor-destaque: #F28DBA;
+    --cor-texto: #C75FA0;
+    --cor-botao-hover: #FFEAF5;
+    --cor-brilho: #FFC0DD;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: radial-gradient(circle at center, #FFD6E8 0%, #FFEAF5 40%, #FFFFFF 100%),
+                      url('https://img.freepik.com/fotos-premium/fundo-rosa-com-glitter-brilhante_95678-15.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.caixa-principal {
+    background-color: rgba(255, 214, 232, 0.95);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 35px;
+    border: 5px solid var(--cor-destaque);
+    border-radius: 40px;
+    box-shadow: 0 0 25px rgba(255, 182, 212, 0.6);
+}
+
+h1 {
+    font-size: 4em;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Great Vibes', cursive;
+    color: var(--cor-destaque);
+    text-shadow:
+        0 0 8px #FFFFFF,
+        0 0 16px #FFFFFF,
+        0 0 24px #FFFFFF; 
+    animation: brilho-led 2s infinite alternate;
+}
+
+@keyframes brilho-led {
+    0% {
+        text-shadow:
+            0 0 8px #FFFFFF,
+            0 0 16px #FFFFFF,
+            0 0 24px #FFFFFF;
+    }
+    100% {
+        text-shadow:
+            0 0 12px #FFFFFF,
+            0 0 20px #FFFFFF,
+            0 0 32px #FFFFFF;
+    }
+}
+
+
+
+button {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-destaque);
+    border-radius: 30px;
+    padding: 14px 22px;
+    margin: 12px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Patrick Hand', cursive;
+    box-shadow: 0 0 12px rgba(255, 182, 212, 0.6);
+}
+
+button:hover {
+    background-color: var(--cor-botao-hover);
+    color: var(--cor-destaque);
+    transform: scale(1.07);
+    box-shadow: 0 0 18px rgba(255, 182, 212, 0.8);
+}
+
+input,
+textarea {
+    font-size: 1.3em;
+    padding: 12px 18px;
+    border: 2px solid var(--cor-destaque);
+    border-radius: 20px;
+    background-color: #FFF5FA;
+    color: var(--cor-texto);
+    font-family: 'Patrick Hand', cursive;
+    box-shadow: 0 0 12px rgba(255, 182, 212, 0.5);
+    animation: brilho-pulsante 2.5s infinite alternate;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(255, 182, 212, 0.8);
+}
+
+@keyframes brilho-pulsante {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 182, 212, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 182, 212, 0.8);
+    }
+}
+
+.brilho-real {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image: url('https://cdn.pixabay.com/photo/2017/08/30/07/52/glitter-2697595_1280.png');
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: 0.3;
+    animation: cintilar 3s infinite alternate;
+}
+
+@keyframes cintilar {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+}
